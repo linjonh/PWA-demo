@@ -12,6 +12,7 @@
   "author": "jaysen.lin@foxmail.com",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
     "gulp-webserver": "^0.9.1"
   }

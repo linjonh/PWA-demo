@@ -282,7 +282,7 @@
      */
     var initialWeatherForecast = {
         key: '2459115',
-        label: 'New York, NY init data',
+        label: 'New York, NY init',
         created: '2016-07-22T01:00:00Z',
         channel: {
             astronomy: {
@@ -348,6 +348,13 @@
     if('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('/service-worker.js')
-            .then(function() { console.log('Service Worker Registered'); });
+            .then(function(swRegitser) {
+                console.log('Service Worker Registered');
+                swRegitser.pushManager.getSubscription()
+                    .then(function (subscription) {
+
+                    });
+
+            });
     }
 })();

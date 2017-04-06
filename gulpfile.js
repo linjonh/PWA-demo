@@ -3,6 +3,9 @@
  */
 var gulp = require('gulp');
 var webserver = require('gulp-webserver');
+var browserSync = require('browser-sync').create();
+
+var reload =browserSync.reload();
 
 gulp.task('webserver', function () {
     gulp.src('work')
@@ -10,9 +13,27 @@ gulp.task('webserver', function () {
             livereload: true,//文件若有修改，则实时在浏览器上刷新
             directoryListing: false,
             open: true,
-            host:'localhost',
+            host: 'localhost',
             port: 9005,
-            path:'/'
+            path: '/'
         }));
 });
+
+
+gulp.task('browserSync', function () {
+    browserSync.init({
+        // proxy:'localhost',
+        server:{
+            baseDir: "./work"
+        },
+        port:9006,
+        open:'local',
+        https:true
+    });
+
+    gulp.watch(['./work/**'],reload)
+});
+
 gulp.task('default', ['webserver']);
+
+gulp.task('bs', ['browserSync']);
