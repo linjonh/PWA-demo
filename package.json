@@ -1,0 +1,17 @@
+{
+  "name": "jaysen.lin",
+  "version": "1.0.0",
+  "description": "PWD demo",
+  "main": "work/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PWA"
+  ],
+  "author": "jaysen.lin@foxmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
